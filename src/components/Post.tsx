@@ -6,7 +6,7 @@ interface PostProps {
 
 export function Post({ data }: any) {
     return (
-        <Link to={`/${data.title}`}>
+        <Link to={`/${data.number}`}>
             <div className="mb-8 md:mb-0 p-8 bg-base-post rounded-md cursor-pointer hover:border-2 hover:border-base-label">
                 <div className="flex w-full items-center">
 

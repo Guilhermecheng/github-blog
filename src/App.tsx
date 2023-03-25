@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/:slug" element={ <BlogPost /> } />
+        {/* <Route path="*" element={<NoMatch />} /> */}
       </Routes>
     </div>
   )
