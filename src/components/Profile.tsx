@@ -21,11 +21,11 @@ export function Profile({ profileInfo }: ProfileProps) {
     }
 
     return (
-        <div className="flex mt-[-5rem] bg-base-profile px-10 py-8 rounded-md relative">
-            <img src={profileInfo.avatar_url} alt="Guilherme Cheng" className="h-[148px] rounded-md" />
+        <div className="flex items-center mt-[-5rem] bg-base-profile px-10 py-8 rounded-md relative">
+            <img src={profileInfo.avatar_url} alt="Guilherme Cheng" className="h-[102px] rounded-full md:h-[148px] md:rounded-md" />
 
-            <div className="ml-8 h-[148px]">
-                <a href="https://github.com/Guilhermecheng" className="text-blue absolute right-8 top-8 text-sm hover:underline hover:underline-offset-2" target="_blank">
+            <div className="ml-8 max-h-[148px]">
+                <a href="https://github.com/Guilhermecheng" className="text-blue absolute right-8 top-10 md:top-8 text-sm hover:underline hover:underline-offset-2" target="_blank">
                     <span className="flex items-center gap-x-2 font-bold">
                         <span className="hidden md:flex">GITHUB </span> 
                         <BsBoxArrowUpRight size={12} />
