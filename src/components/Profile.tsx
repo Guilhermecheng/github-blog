@@ -41,7 +41,7 @@ export function Profile({ profileInfo }: ProfileProps) {
                     </span>
                     <span className="flex items-center gap-2 ml-0 md:ml-6">
                         <BsFillBuildingFill size={16} className="text-base-label" />
-                        Accenture
+                        {profileInfo.company}
                     </span>
                     <span className="flex items-center gap-2 ml-0 md:ml-6">
                         <BsPeopleFill size={16} className="text-base-label" />
