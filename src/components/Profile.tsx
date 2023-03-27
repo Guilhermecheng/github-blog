@@ -1,4 +1,5 @@
 import { BsBoxArrowUpRight, BsGithub, BsFillBuildingFill, BsPeopleFill } from "react-icons/bs";
+import { Loading } from "./Loading";
 
 interface ProfileProps {
     profileInfo: {
@@ -15,7 +16,7 @@ export function Profile({ profileInfo }: ProfileProps) {
     if (!profileInfo) {
         return (
             <div className="flex items-center justify-center mt-[-5rem] h-[148px] bg-base-profile px-10 py-8 rounded-md relative text-base-title">
-                Carregando...
+                <Loading />
             </div>
         )
     }

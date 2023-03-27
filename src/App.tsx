@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom"
 import BlogPost from "./pages/BlogPost"
 import Home from "./pages/Home"
+import { NoMatch } from "./pages/NoMatch"
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/:slug" element={ <BlogPost /> } />
-        {/* <Route path="*" element={<NoMatch />} /> */}
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
   )

@@ -58,7 +58,6 @@ function Home() {
   }, [])
   
   return (
-    // <div className='w-full h-full bg-base-background flex flex-col items-center justify-center'>
     <>
       <Helmet>
         <title>Github Blog | Home</title>
@@ -70,16 +69,11 @@ function Home() {
 
         <div className="my-12 md:grid grid-cols-2 md:gap-8">
           { postsList.length > 0 && (
-            postsList.map((post) => <Post data={post} /> )
+            postsList.map((post, i) => <Post key={i} data={post} /> )
           ) }
-          {/* <Post />
-          <Post />
-          <Post />
-          <Post /> */}
         </div>
       </section>
     </>
-    // </div>
   )
 }
 
