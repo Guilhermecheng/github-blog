@@ -1,5 +1,6 @@
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Link } from "react-router-dom";
+import { calcHowMuchTimeHasPassed } from "../helpers/helpers";
 
 interface PostProps {
 
@@ -13,7 +14,9 @@ export function Post({ data }: any) {
 
                     {/* <h1 className="text-base-title text-xl font-semibold max-w-[80%]">JavaScript data types and data structures</h1> */}
                     <h1 className="text-base-title text-xl font-semibold max-w-[80%]">{data.title}</h1>
-                    <span className="ml-auto text-base-span text-sm">Há 6 dias</span>
+                    <span className="ml-auto text-base-span text-sm">
+                        {calcHowMuchTimeHasPassed(data.created_at) === 1 ? `Há ${calcHowMuchTimeHasPassed(data.created_at)} dia` : `Há ${calcHowMuchTimeHasPassed(data.created_at)} dias`}
+                    </span>
                 </div>
 
                 <div className="mt-5 overflow-hidden text-ellipsis max-h-[112px]">

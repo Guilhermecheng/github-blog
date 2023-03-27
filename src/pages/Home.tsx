@@ -65,7 +65,7 @@ function Home() {
 
       <section className="w-full max-w-[864px] px-4">
         <Profile profileInfo={userInfo} />
-        <SearchBar />
+        <SearchBar postsList={postsList} />
 
         <div className="my-12 md:grid grid-cols-2 md:gap-8">
           { postsList.length > 0 && (
