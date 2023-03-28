@@ -9,7 +9,7 @@ interface PostProps {
 export function Post({ data }: any) {
     return (
         <Link to={`/${data.number}`}>
-            <div className="mb-4 md:mb-0 p-8 bg-base-post rounded-md cursor-pointer hover:border-2 hover:border-base-label max-h-[260px] h-full">
+            <div className="mb-4 md:mb-0 p-6 md:p-8 bg-base-post rounded-md cursor-pointer hover:border-2 hover:border-base-label max-h-[260px] h-full">
                 <div className="flex w-full items-center">
 
                     {/* <h1 className="text-base-title text-xl font-semibold max-w-[80%]">JavaScript data types and data structures</h1> */}

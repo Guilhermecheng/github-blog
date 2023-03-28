@@ -67,7 +67,7 @@ function Home() {
         <Profile profileInfo={userInfo} />
         <SearchBar postsList={postsList} />
 
-        <div className="my-8 md:my-12 md:grid grid-cols-2 md:gap-8">
+        <div className="my-10 md:my-12 md:grid grid-cols-2 md:gap-8">
           { postsList.length > 0 && (
             postsList.map((post, i) => <Post key={i} data={post} /> )
           ) }
