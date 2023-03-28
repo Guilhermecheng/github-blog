@@ -3,8 +3,8 @@ export function SearchBar({postsList}: any) {
     return (
         <div className="mt-6 relative">
             <div className="w-full flex">
-                <h1 className="text-base-title font-semibold text-lg">Publicações</h1>
-                <h2 className="absolute right-0 text-base-span text-sm">
+                <h1 className="text-base-title font-bold text-lg md:text-2xl">Publicações</h1>
+                <h2 className="absolute right-0 text-base-span text-sm md:text-base">
                     {postsList.length === 1 ? `${postsList.length} publicação`: `${postsList.length} publicações`}
                 </h2>
             </div>

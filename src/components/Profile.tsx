@@ -22,20 +22,20 @@ export function Profile({ profileInfo }: ProfileProps) {
     }
 
     return (
-        <div className="flex items-center mt-[-5rem] bg-base-profile px-10 py-8 rounded-md relative">
+        <div className="flex items-center mt-[-5rem] bg-base-profile px-6 md:px-10 py-8 rounded-md relative">
             <img src={profileInfo.avatar_url} alt="Guilherme Cheng" className="h-[102px] rounded-full md:h-[148px] md:rounded-md" />
 
-            <div className="ml-8 max-h-[148px]">
+            <div className="ml-10 md:ml-8 max-h-[148px]">
                 <a href="https://github.com/Guilhermecheng" className="text-blue absolute right-8 top-10 md:top-8 text-sm hover:underline hover:underline-offset-2" target="_blank">
                     <span className="flex items-center gap-x-2 font-bold">
                         <span className="hidden md:flex">GITHUB </span> 
-                        <BsBoxArrowUpRight size={12} />
+                        <BsBoxArrowUpRight size={16} className="mt-[-4px]" />
                     </span>
                 </a>
-                <h1 className="text-base-title font-semibold text-lg md:text-2xl">{profileInfo.name}</h1>
+                <h1 className="text-base-title font-bold text-lg md:text-2xl">{profileInfo.name}</h1>
                 <p className="hidden md:flex text-base-text mt-2 h-[52px] text-sm md:text-base ">{profileInfo.bio}</p>
 
-                <div className="flex flex-col md:flex-row text-base-subtitle mt-6 text-sm md:text-base">
+                <div className="flex flex-col md:flex-row text-base-subtitle mt-6 text-sm md:text-base gap-y-1 md:gap-y-0">
                     <span className="flex items-center gap-2">
                         <BsGithub size={16} className="text-base-label" />
                         {profileInfo.login}

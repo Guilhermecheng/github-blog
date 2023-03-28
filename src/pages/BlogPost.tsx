@@ -1,6 +1,7 @@
 import {Link, useParams} from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { BsChevronLeft, BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
+import { FaComment, FaCalendarDay } from "react-icons/fa";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -60,7 +61,7 @@ export default function BlogPost() {
                 <div className="w-full flex">
                     <Link to="/" className="text-blue text-sm hover:underline hover:underline-offset-2 mr-auto">
                         <span className="flex items-center gap-x-2 font-bold">
-                            <BsChevronLeft size={12} />
+                            <BsChevronLeft size={16} />
                             <span className="hidden md:flex">VOLTAR</span> 
                         </span>
                     </Link>
@@ -68,14 +69,14 @@ export default function BlogPost() {
                     <a href="https://github.com/Guilhermecheng" className="text-blue text-sm hover:underline hover:underline-offset-2" target="_blank">
                         <span className="flex items-center gap-x-2 font-bold">
                             <span className="hidden md:flex">VER NO GITHUB </span> 
-                            <BsBoxArrowUpRight size={12} />
+                            <BsBoxArrowUpRight size={16} className="md:mt-[-4px]" />
                         </span>
                     </a>
 
                 </div>
 
                 <div className="mt-4 flex-col">
-                    <h1 className="font-semibold text-lg md:text-2xl">
+                    <h1 className="font-bold text-lg md:text-2xl">
                         {postData.title}
                     </h1>
                     <div className="flex gap-x-8 text-base-span mt-2 text-xs sm:text-sm md:text-base">
@@ -83,11 +84,13 @@ export default function BlogPost() {
                             <BsGithub size={16} className="text-base-label" />
                             {postData.author}
                         </span>
-                        <span>
+                        <span className="flex items-center gap-2">
+                            <FaCalendarDay size={16} className="text-base-label" />
                             {calcHowMuchTimeHasPassed(postData.createdAt) === 1 ? `Há ${calcHowMuchTimeHasPassed(postData.createdAt)} dia` : `Há ${calcHowMuchTimeHasPassed(postData.createdAt)} dias`}
                         </span>
-                        <span>
-                            {postData.comments} comentários
+                        <span className="flex items-center gap-2">
+                            <FaComment size={16} className="text-base-label" />
+                            {postData.comments} <span className="hidden md:flex">comentários</span>
                         </span>
                     </div>
                 </div>
