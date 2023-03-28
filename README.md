@@ -1,7 +1,11 @@
 # github-blog
 My first personal blog!
 
-<img width="1309" alt="Captura de Tela 2023-03-28 às 19 22 04" src="https://user-images.githubusercontent.com/62719629/228380179-3d35b02d-0dd5-465d-b05e-1b1950fcb89a.png">
+<div style="display:flex">
+  <img height="420" alt="homepage sreenshot" src="https://user-images.githubusercontent.com/62719629/228383432-7c6adc9b-24a9-4ac8-b8aa-c27fcf9007d7.png">
+  <img height="420" alt="blog page screenshot" src="https://user-images.githubusercontent.com/62719629/228383373-019ef0c5-35a1-4b58-9681-f3ec1d393902.png">
+</div>
+
 
 A blog based in Github's API.<br/>
 All blog posts are just issues from this repository.
