@@ -6,19 +6,25 @@ import { Post } from "../components/Post";
 import { Profile } from "../components/Profile";
 import { SearchBar } from "../components/SearchBar";
 
-interface PostsListProps {
-
+interface PostProps {
+  avatar_url: string;
+  bio: string;
+  company: string;
+  name: string;
+  login: string;
+  followers: number;
 }
 
+export const username = 'Guilhermecheng';
+
 function Home() {
-  const username = 'Guilhermecheng';
   const [userInfo, setUserInfo] = useState<any>(null);
-  const [postsList, setPostsList] = useState([]);
+  const [postsList, setPostsList] = useState<PostProps[]>([]);
+  const [query, setQuery] = useState('');
 
   async function getUser() {
     try {
       const response = await axios.get(`https://api.github.com/users/${username}`);
-      // console.log(response);
 
       return {
         avatar_url: response.data.avatar_url,
@@ -32,13 +38,15 @@ function Home() {
     } catch (err) {
       console.log(err);
     }
-    
   }
 
   async function getPostsList() {
     try {
-      const response = await axios.get(`https://api.github.com/search/issues?q=repo:Guilhermecheng/github-blog`);
-      console.log(response);
+      const response = await axios.get(`https://api.github.com/search/issues?q=${query}%20repo:${username}/github-blog`, {
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_PERSONAL_TOKEN}`
+        }
+      });
 
       setPostsList(response.data.items);
 
@@ -55,7 +63,7 @@ function Home() {
 
   useEffect(() => {
     getPostsList();
-  }, [])
+  }, [query])
   
   return (
     <>
@@ -65,7 +73,7 @@ function Home() {
 
       <section className="w-full max-w-[864px] px-4">
         <Profile profileInfo={userInfo} />
-        <SearchBar postsList={postsList} />
+        <SearchBar postsList={postsList} setQuery={setQuery} />
 
         <div className="my-10 md:my-12 md:grid grid-cols-2 md:gap-8">
           { postsList.length > 0 && (

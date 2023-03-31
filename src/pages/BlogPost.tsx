@@ -12,6 +12,7 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { NoMatch } from "./NoMatch";
 import { Loading } from "../components/Loading";
 import { calcHowMuchTimeHasPassed } from "../helpers/helpers";
+import { username } from "./Home";
 
 export default function BlogPost() {
     const { slug } = useParams();
@@ -21,7 +22,7 @@ export default function BlogPost() {
 
     async function getPostContent() {
         try {
-            const response = await axios.get(`https://api.github.com/repos/Guilhermecheng/github-blog/issues/${slug}`);
+            const response = await axios.get(`https://api.github.com/repos/${username}/github-blog/issues/${slug}`);
             console.log(response)
             let setPageData = {
                 title: response.data.title,
@@ -54,7 +55,7 @@ export default function BlogPost() {
     return (
         <section className="w-full max-w-[864px] px-4">
             <Helmet>
-                <title>Github Blog | {postData.title}</title>
+                <title>{postData.title} | Github Blog</title>
             </Helmet>
 
             <div className="w-full flex flex-col mt-[-5rem] min-h-[148px] bg-base-profile px-10 py-8 rounded-md  text-base-title">
@@ -79,7 +80,7 @@ export default function BlogPost() {
                     <h1 className="font-bold text-lg md:text-2xl">
                         {postData.title}
                     </h1>
-                    <div className="flex gap-x-8 text-base-span mt-2 text-xs sm:text-sm md:text-base">
+                    <div className="flex gap-x-6 md:gap-x-8 text-base-span mt-2 text-xs sm:text-sm md:text-base">
                         <span className="flex items-center gap-2">
                             <BsGithub size={16} className="text-base-label" />
                             {postData.author}
@@ -90,7 +91,7 @@ export default function BlogPost() {
                         </span>
                         <span className="flex items-center gap-2">
                             <FaComment size={16} className="text-base-label" />
-                            {postData.comments} <span className="hidden md:flex">comentários</span>
+                            {postData.comments} <span className="hidden md:flex">{postData.comments === 1 ? "comentário" : "comentários"}</span>
                         </span>
                     </div>
                 </div>

@@ -46,7 +46,7 @@ export function Profile({ profileInfo }: ProfileProps) {
                     </span>
                     <span className="flex items-center gap-2 ml-0 md:ml-6">
                         <BsPeopleFill size={16} className="text-base-label" />
-                        {profileInfo.followers} seguidores
+                        {profileInfo.followers} {profileInfo.followers === 1 ? "seguidor" : "seguidores"}
                     </span>
                 </div>
             </div>
