@@ -1,9 +1,9 @@
 # github-blog
 My first personal blog!
 
-<div style="display:flex">
-  <img height="420" alt="homepage sreenshot" src="https://user-images.githubusercontent.com/62719629/228383432-7c6adc9b-24a9-4ac8-b8aa-c27fcf9007d7.png">
-  <img height="420" alt="blog page screenshot" src="https://user-images.githubusercontent.com/62719629/228383373-019ef0c5-35a1-4b58-9681-f3ec1d393902.png">
+<div style="display:flex align-items:center">
+  <img height="400" alt="homepage sreenshot" src="https://user-images.githubusercontent.com/62719629/228383432-7c6adc9b-24a9-4ac8-b8aa-c27fcf9007d7.png">
+  <img height="400" alt="blog page screenshot" src="https://user-images.githubusercontent.com/62719629/228383373-019ef0c5-35a1-4b58-9681-f3ec1d393902.png">
 </div>
 
 
